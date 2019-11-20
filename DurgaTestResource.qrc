@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Icon">
+        <file alias="IconLampOff">bit_off_16.png</file>
+        <file alias="IconLampOn">bit_on_16.png</file>
+    </qresource>
+</RCC>
