@@ -16,17 +16,20 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     HyoFrame.cpp \
     HyoDioForm.cpp \
-    HyoDurgaModuleForm.cpp
+    HyoDurgaModuleForm.cpp \
+    HyoNumberPad.cpp
 
 HEADERS  += mainwindow.h \
     HyoFrame.h \
     HyoDioForm.h \
     HyoDurgaModuleForm.h \
-    DurgaTestCommon.h
+    DurgaTestCommon.h \
+    HyoNumberPad.h
 
 FORMS    += mainwindow.ui \
     HyoDioForm.ui \
-    HyoDurgaModuleForm.ui
+    HyoDurgaModuleForm.ui \
+    HyoNumberPad.ui
 
 RESOURCES += \
     DurgaTestResource.qrc

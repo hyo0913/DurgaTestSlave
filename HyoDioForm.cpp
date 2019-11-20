@@ -9,6 +9,7 @@ HyoDioForm::HyoDioForm(int points, QWidget *parent) :
     ui(new Ui::HyoDioForm)
 {
     ui->setupUi(this);
+    this->setObjectName("Digital I/O");
 
     makePoints(points);
 

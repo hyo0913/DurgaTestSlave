@@ -21,16 +21,21 @@ public:
     QVariant getValue() const;
     void setValue(const QVariant &value);
     void setValue(int idx, bool value);
+
+    bool eventFilter(QObject *object, QEvent *event);
     
 private:
     Ui::HyoDurgaModuleForm *ui;
     QComboBox* m_comboBox;
-    QWidget* m_valueForm;
+    QWidget* m_valueWidget;
 
     void init();
 
 private slots:
     void onModelChanged(const QString &model);
+
+    void onSpinBoxClicked();
+    void onSpinBoxValueInputted(int val);
 };
 
 #endif // HYODURGAMODULEFORM_H

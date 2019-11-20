@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1,0">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
@@ -69,7 +69,14 @@
      </widget>
     </item>
     <item>
-     <widget class="QPlainTextEdit" name="plainTextEditLog"/>
+     <widget class="QPlainTextEdit" name="plainTextEditLog">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="maximumBlockCount">
+       <number>100</number>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
