@@ -35,7 +35,8 @@ private slots:
     void onModelChanged(const QString &model);
 
     void onSpinBoxClicked();
-    void onSpinBoxValueInputted(int val);
+    void onNumberPadEntered(const QVariant &val);
+    void onNumberPadCanceled();
 };
 
 #endif // HYODURGAMODULEFORM_H

@@ -1,8 +1,6 @@
 #include "HyoDurgaModuleForm.h"
 #include "ui_HyoDurgaModuleForm.h"
 
-#include <QDebug>
-
 #include <QComboBox>
 #include <QSpinBox>
 
@@ -124,7 +122,8 @@ void HyoDurgaModuleForm::onSpinBoxClicked()
 {
     HyoNumberPad* numberPad = new HyoNumberPad();
 
-    connect(numberPad, SIGNAL(entered(int)), this, SLOT(onSpinBoxValueInputted(int)));
+    connect(numberPad, SIGNAL(entered(QVariant)), this, SLOT(onNumberPadEntered(QVariant)));
+    connect(numberPad, SIGNAL(canceled()), this, SLOT(onNumberPadCanceled()));
 
     numberPad->setAttribute(Qt::WA_DeleteOnClose);
     numberPad->setModal(true);
@@ -134,7 +133,13 @@ void HyoDurgaModuleForm::onSpinBoxClicked()
     numberPad->move(pos);
 }
 
-void HyoDurgaModuleForm::onSpinBoxValueInputted(int val)
+void HyoDurgaModuleForm::onNumberPadEntered(const QVariant &val)
 {
-    static_cast<QSpinBox*>(m_valueWidget)->setValue(val);
+    static_cast<QSpinBox*>(m_valueWidget)->setValue(val.toInt());
+    m_valueWidget->clearFocus();
+}
+
+void HyoDurgaModuleForm::onNumberPadCanceled()
+{
+    m_valueWidget->clearFocus();
 }

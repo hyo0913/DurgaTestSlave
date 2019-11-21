@@ -55,6 +55,12 @@
     </item>
     <item>
      <widget class="QTreeWidget" name="treeWidget">
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::NoSelection</enum>
+      </property>
       <property name="rootIsDecorated">
        <bool>false</bool>
       </property>
@@ -74,7 +80,7 @@
        <bool>true</bool>
       </property>
       <property name="maximumBlockCount">
-       <number>100</number>
+       <number>300</number>
       </property>
      </widget>
     </item>
