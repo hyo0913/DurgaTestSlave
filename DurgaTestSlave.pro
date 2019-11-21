@@ -11,25 +11,30 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = DurgaTestSlave
 TEMPLATE = app
 
+PROJECTPATH = $$PWD
+
+CONFIG += HYOFRAME
+CONFIG += HYONUMBERPAD
+
+include(../HyoCommon/HyoCommon.pri)
+
+INCLUDEPATH += \
+    ../HyoCommon/DataFrame \
+    ../HyoCommon/NumberPad
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    HyoFrame.cpp \
+    mainwindow.cpp \
     HyoDioForm.cpp \
-    HyoDurgaModuleForm.cpp \
-    HyoNumberPad.cpp
+    HyoDurgaModuleForm.cpp
 
 HEADERS  += mainwindow.h \
-    HyoFrame.h \
     HyoDioForm.h \
     HyoDurgaModuleForm.h \
-    DurgaTestCommon.h \
-    HyoNumberPad.h
+    DurgaTestCommon.h
 
 FORMS    += mainwindow.ui \
     HyoDioForm.ui \
-    HyoDurgaModuleForm.ui \
-    HyoNumberPad.ui
+    HyoDurgaModuleForm.ui
 
 RESOURCES += \
     DurgaTestResource.qrc

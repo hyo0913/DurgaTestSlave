@@ -18,21 +18,19 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ui->treeWidget->header()->setResizeMode(QHeaderView::Stretch);
-    /*
-    int width = ui->treeWidget->header()->width();
-    ui->treeWidget->setColumnWidth(0, width/2);
-    */
 
     connect(ui->pushButtonAdd, SIGNAL(clicked()), this, SLOT(onAddClicked()));
     connect(ui->pushButtonDel, SIGNAL(clicked()), this, SLOT(onDelClicked()));
     connect(ui->pushButtonStart, SIGNAL(clicked()), this, SLOT(onStartClicked()));
 
+    /*
     bool isRegisterd = QDBusConnection::sessionBus().registerObject("/com/m2i/Fwdaemon", this);
     if( isRegisterd ) {
         appendLog("QDBusConnection::sessionBus().registerObject O");
     } else {
         appendLog("QDBusConnection::sessionBus().registerObject X");
     }
+    */
 }
 
 MainWindow::~MainWindow()
@@ -413,23 +411,6 @@ void MainWindow::onStartClicked()
 
 void MainWindow::onAddClicked()
 {
-    /*
-    QTreeWidgetItem* item = new QTreeWidgetItem(ui->treeWidget);
-    QComboBox* comboBox = new QComboBox();
-
-    comboBox->addItem(ModelName_DI);
-    comboBox->addItem(ModelName_DO);
-    comboBox->addItem(ModelName_AI);
-
-    ui->treeWidget->setItemWidget(item, 0, comboBox);
-
-    QSpinBox* spinBox = new QSpinBox();
-    spinBox->setMinimum(0);
-    spinBox->setMaximum(65535);
-
-    ui->treeWidget->setItemWidget(item, 1, spinBox);
-    */
-
     QTreeWidgetItem* item = new QTreeWidgetItem(ui->treeWidget);
     HyoDurgaModuleForm* module = new HyoDurgaModuleForm();
 
@@ -442,8 +423,6 @@ void MainWindow::onDelClicked()
     QTreeWidgetItem* item = ui->treeWidget->takeTopLevelItem(ui->treeWidget->topLevelItemCount()-1);
     if( item != NULL )
     {
-        //ui->treeWidget->removeItemWidget(item, 0);
-        //ui->treeWidget->removeItemWidget(item, 1);
         delete item;
         item = NULL;
     }
