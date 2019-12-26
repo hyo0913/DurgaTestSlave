@@ -40,7 +40,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::appendLog(const QString &msg)
 {
-    ui->plainTextEditLog->appendPlainText(msg);
+    //ui->plainTextEditLog->appendPlainText(msg);
 }
 
 void MainWindow::sendDBusData(const QByteArray &send)
