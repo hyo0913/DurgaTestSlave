@@ -13,14 +13,7 @@ TEMPLATE = app
 
 PROJECTPATH = $$PWD
 
-CONFIG += HYOFRAME
-CONFIG += HYONUMBERPAD
-
 include(../HyoCommon/HyoCommon.pri)
-
-INCLUDEPATH += \
-    ../HyoCommon/DataFrame \
-    ../HyoCommon/NumberPad
 
 SOURCES += main.cpp\
     mainwindow.cpp \
